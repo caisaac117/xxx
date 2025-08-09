@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://api.binance.com https://api.coingecko.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; script-src 'self' 'unsafe-inline'">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CryptoTrend — Glass</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="titlebar">
+      <div class="drag-region"></div>
+      <div class="title">CryptoTrend — Glass</div>
+      <div class="win-buttons">
+        <button id="minBtn">—</button>
+        <button id="maxBtn">□</button>
+        <button id="closeBtn">✕</button>
+      </div>
+    </div>
+    <div class="wrap">
+      <aside class="sidebar">
+        <button class="nav active" data-page="overview">Overview</button>
+        <button class="nav" data-page="markets">Markets</button>
+        <button class="nav" data-page="news">News</button>
+        <button class="nav" data-page="screener">Screener</button>
+      </aside>
+      <main class="content">
+        <section class="page" id="overview" data-visible="true">
+          <div class="card">
+            <h1>One-Click Daily Report</h1>
+            <p>Live BTC/ETH/SOL from Binance (with CoinGecko fallback). Liquid-glass UI.</p>
+          </div>
+          <div class="card row">
+            <label class="toggle"><input type="checkbox" id="mockToggle" /> Use Mock Data (offline)</label>
+            <button id="genBtn" class="primary">Generate Report</button>
+            <div id="spinner" class="spinner hidden"></div>
+          </div>
+          <div id="status" class="note"></div>
+          <div class="card">
+            <canvas id="chart" width="960" height="320"></canvas>
+          </div>
+          <div class="note">Report saves to your <b>Documents</b> and opens automatically.</div>
+        </section>
+        <section class="page" id="markets">
+          <div class="card"><h2>Markets</h2><p>Preview uses the same data feed as the report. If live data fails, you’ll see an error above.</p></div>
+        </section>
+        <section class="page" id="news">
+          <div class="card"><h2>News</h2><p>Add RSS/feeds here if you want headlines in-app. Report includes a note about where to plug RSS.</p></div>
+        </section>
+        <section class="page" id="screener">
+          <div class="card"><h2>Meme Screener</h2><p>Coming soon in GUI; can be added to the report generation logic.</p></div>
+        </section>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
