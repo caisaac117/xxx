@@ -1,0 +1,36 @@
+{
+  "name": "cryptotrend-glass",
+  "version": "1.0.0",
+  "description": "Modern liquid-glass crypto trend app (Electron) \u2014 one-click report for BTC/ETH/SOL",
+  "main": "main.js",
+  "author": "you",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder -w portable"
+  },
+  "build": {
+    "appId": "com.yourdomain.cryptotrendglass",
+    "productName": "CryptoTrendGlass",
+    "files": [
+      "!**/.gitignore",
+      "!**/.github",
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "portable"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "31.2.1",
+    "electron-builder": "24.13.3"
+  },
+  "dependencies": {}
+}
